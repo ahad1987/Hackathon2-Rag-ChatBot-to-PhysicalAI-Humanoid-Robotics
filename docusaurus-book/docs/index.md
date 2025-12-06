@@ -44,4 +44,6 @@ Each chapter builds on the last. By the end, you'll understand Physical AI and b
 
 ---
 
+**Author:** Abdul Ahad Javaid
+
 **Ready?** [Begin with Introduction](./introduction/what-is-physical-ai.md)
