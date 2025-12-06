@@ -1,0 +1,9 @@
+{
+  "label": "Module 4: Vision-Language-Action",
+  "position": 4,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn how large language models, voice interfaces, and cognitive planning enable autonomous humanoid robots to understand natural language, reason about complex tasks, and execute multi-step actions in the real world."
+  },
+  "collapsed": false
+}

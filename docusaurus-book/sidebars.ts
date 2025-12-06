@@ -83,6 +83,30 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Module 3: The AI-Robot Brain (NVIDIA Isaac™)',
+      items: [
+        'module3/introduction',
+        'module3/chapter-1-advanced-perception-training',
+        'module3/chapter-2-isaac-sim-synthetic-data',
+        'module3/chapter-3-isaac-ros-vslam',
+        'module3/chapter-4-nav2-path-planning',
+      ],
+      collapsed: false,
+    },
+    {
+      type: 'category',
+      label: 'Module 4: Vision-Language-Action',
+      items: [
+        'module4/introduction',
+        'module4/chapter-1-llm-robotics-convergence',
+        'module4/chapter-2-voice-to-action-whisper',
+        'module4/chapter-3-cognitive-planning-llm',
+        'module4/chapter-4-autonomous-humanoid-capstone',
+      ],
+      collapsed: false,
+    },
+    {
+      type: 'category',
       label: 'Ethics & Future',
       items: [
         'ethics/responsible-ai',
