@@ -27,6 +27,7 @@ const sidebars: SidebarsConfig = {
         'introduction/evolution-of-systems',
         'introduction/why-this-matters',
       ],
+      collapsed: false,
     },
     {
       type: 'category',
@@ -36,6 +37,7 @@ const sidebars: SidebarsConfig = {
         'foundations/hardware-overview',
         'foundations/software-overview',
       ],
+      collapsed: true,
     },
     {
       type: 'category',
@@ -45,6 +47,7 @@ const sidebars: SidebarsConfig = {
         'approach/prerequisites',
         'approach/how-to-use-this-book',
       ],
+      collapsed: true,
     },
     {
       type: 'category',
@@ -52,10 +55,11 @@ const sidebars: SidebarsConfig = {
       items: [
         'applications/use-cases',
       ],
+      collapsed: true,
     },
     {
       type: 'category',
-      label: 'Module 1: ROS 2',
+      label: 'Module 1: The Robotic Nervous System (ROS 2)',
       items: [
         'module1/index',
         'module1/chapter-1-middleware',
@@ -67,11 +71,24 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Module 2: The Digital Twin (Gazebo & Unity)',
+      items: [
+        'module2/introduction',
+        'module2/chapter-1-physics-environment',
+        'module2/chapter-2-gazebo-physics',
+        'module2/chapter-3-unity-interaction',
+        'module2/chapter-4-sensor-simulation',
+      ],
+      collapsed: false,
+    },
+    {
+      type: 'category',
       label: 'Ethics & Future',
       items: [
         'ethics/responsible-ai',
         'ethics/future-directions',
       ],
+      collapsed: true,
     },
     {
       type: 'doc',
