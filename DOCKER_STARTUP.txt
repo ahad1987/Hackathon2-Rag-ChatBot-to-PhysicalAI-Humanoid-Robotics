@@ -1,0 +1,117 @@
+================================================================================
+EASIEST WAY - USE DOCKER (No Python/Rust Installation Needed!)
+================================================================================
+
+Docker handles everything automatically. No compilation issues!
+
+================================================================================
+STEP 1: Install Docker Desktop
+================================================================================
+
+1. Download: https://www.docker.com/products/docker-desktop
+2. Install it
+3. Open Docker Desktop (keep it running in background)
+
+That's it! Docker is ready.
+
+================================================================================
+STEP 2: Start Everything with Docker
+================================================================================
+
+Open Command Prompt (cmd) and run:
+
+cd C:\Users\Ahad\Desktop\hackathon-Project
+
+docker-compose up --build
+
+This will:
+  • Build the backend container
+  • Start PostgreSQL
+  • Start the backend API
+  • Start your Docusaurus book
+
+Wait for all services to start (takes ~2-3 minutes first time).
+
+================================================================================
+STEP 3: Open Your Chatbot
+================================================================================
+
+Once you see "Docusaurus server started", open:
+
+  http://localhost:3000/chat
+
+YOU SHOULD SEE:
+  • Beautiful chat interface
+  • Ready to ask questions
+
+✅ Your chatbot is live!
+
+================================================================================
+IF YOU DON'T WANT DOCKER
+================================================================================
+
+You need to install Rust first to fix the compilation error:
+
+1. Download: https://rustup.rs/
+2. Run the installer
+3. Follow prompts
+4. Restart your computer
+5. Then try: START_BACKEND.bat
+
+OR just use Docker instead (much easier!)
+
+================================================================================
+DOCKER COMMANDS
+================================================================================
+
+Start everything:
+  docker-compose up --build
+
+Stop everything:
+  docker-compose down
+
+View logs:
+  docker-compose logs -f
+
+Rebuild (if files changed):
+  docker-compose up --build
+
+Clean up (delete containers):
+  docker-compose down -v
+
+================================================================================
+HOW DOCKER WORKS HERE
+================================================================================
+
+docker-compose.yml starts 3 services:
+
+1. Backend (FastAPI)
+   - Port: 8000
+   - API docs: http://localhost:8000/docs
+
+2. Frontend (Docusaurus + Chat)
+   - Port: 3000
+   - Chat: http://localhost:3000/chat
+
+3. PostgreSQL (Local Database for testing)
+   - Port: 5432
+   - User: raguser
+   - Password: ragpassword
+
+All connected and ready!
+
+================================================================================
+RECOMMENDED: USE DOCKER
+================================================================================
+
+Easiest ✅
+Fastest ✅
+No compilation issues ✅
+Just works ✅
+
+Open Docker Desktop, then:
+  docker-compose up --build
+
+That's all!
+
+================================================================================

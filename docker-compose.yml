@@ -1,0 +1,129 @@
+version: "3.9"
+
+services:
+  # Qdrant Vector Database
+  qdrant:
+    image: qdrant/qdrant:v1.13.1
+    container_name: rag-qdrant
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - rag-network
+    restart: unless-stopped
+    environment:
+      QDRANT_API_KEY: qdrant-test-key
+
+  # RAG Backend API
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: rag-backend
+    ports:
+      - "8000:8000"
+    environment:
+      OPENAI_API_KEY: sk-your-api-key-here
+      EMBEDDING_MODEL: text-embedding-3-small
+      QDRANT_URL: http://qdrant:6333
+      QDRANT_API_KEY: qdrant-test-key
+      QDRANT_COLLECTION_NAME: book-embeddings
+      NEON_DB_URL: postgresql://raguser:ragpassword@postgres:5432/rag_chatbot
+      API_HOST: 0.0.0.0
+      API_PORT: 8000
+      ENV: production
+      CORS_ORIGINS: '["http://localhost:3000", "http://localhost:3001"]'
+      TOP_K_RETRIEVAL: 10
+      RERANKER_TOP_K: 5
+      MAX_TOKENS_PER_QUERY: 4000
+      CHUNK_SIZE: 1000
+      CHUNK_OVERLAP: 200
+      RATE_LIMIT_QUERIES_PER_MINUTE: 60
+      ENABLE_SELECTION_MODE: "true"
+    depends_on:
+      - postgres
+      - qdrant
+    networks:
+      - rag-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # PostgreSQL (Neon local simulation)
+  postgres:
+    image: postgres:16-alpine
+    container_name: rag-postgres
+    environment:
+      POSTGRES_USER: raguser
+      POSTGRES_PASSWORD: ragpassword
+      POSTGRES_DB: rag_chatbot
+      POSTGRES_INITDB_ARGS: -c shared_buffers=256MB -c max_connections=100
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - rag-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U raguser -d rag_chatbot"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Frontend (Docusaurus)
+  frontend:
+    image: node:20-alpine
+    container_name: docusaurus-frontend
+    working_dir: /app
+    command: sh -c "npm install && echo 'y' | npm run start"
+    ports:
+      - "3000:3000"
+    environment:
+      REACT_APP_API_ENDPOINT: http://localhost:8000
+    volumes:
+      - ./docusaurus-book:/app
+      - /app/node_modules
+    depends_on:
+      - backend
+    networks:
+      - rag-network
+    restart: unless-stopped
+
+networks:
+  rag-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local
+  qdrant_data:
+    driver: local
+
+# Instructions for use:
+# 1. Create a .env file with required variables:
+#    OPENAI_API_KEY=sk-...
+#    QDRANT_URL=https://...
+#    QDRANT_API_KEY=...
+#    NEON_DB_URL=postgresql://...
+#
+# 2. For local development with Neon:
+#    - Comment out the postgres service
+#    - Update NEON_DB_URL in backend environment
+#
+# 3. For local development with Qdrant:
+#    - Add qdrant service and uncomment postgres
+#
+# 4. Start services:
+#    docker-compose up --build
+#
+# 5. Access:
+#    - Backend API: http://localhost:8000
+#    - Frontend: http://localhost:3000
+#    - API Docs: http://localhost:8000/docs

@@ -1,0 +1,170 @@
+================================================================================
+🐳 DOCKER QUICK START - RUN YOUR CHATBOT IN 5 MINUTES
+================================================================================
+
+STEP 1: Install Docker Desktop (5 minutes)
+STEP 2: Run one command
+STEP 3: Open your chatbot
+
+That's it!
+
+================================================================================
+STEP 1: INSTALL DOCKER DESKTOP
+================================================================================
+
+1. Go to: https://www.docker.com/products/docker-desktop
+
+2. Click "Download for Windows"
+
+3. Run the installer
+   • Accept all default settings
+   • Choose "Install for me"
+   • Restart your computer when asked
+
+4. After restart, Docker Desktop should open automatically
+   • Keep it running in the background
+
+✅ Docker is ready!
+
+================================================================================
+STEP 2: START YOUR CHATBOT (1 command!)
+================================================================================
+
+Open Command Prompt (cmd) and run:
+
+  cd C:\Users\Ahad\Desktop\hackathon-Project
+  docker-compose up --build
+
+WAIT FOR:
+  ✅ "Docusaurus server started on: http://localhost:3000"
+  ✅ "Application startup complete"
+
+This takes 2-3 minutes the first time.
+
+================================================================================
+STEP 3: OPEN YOUR CHATBOT
+================================================================================
+
+Once you see "Docusaurus server started", open:
+
+  http://localhost:3000/chat
+
+YOU SHOULD SEE:
+  🎨 Beautiful purple gradient header
+  💬 Chat input box
+  📝 Welcome message
+  ✅ Ready to ask questions
+
+================================================================================
+TEST IT!
+================================================================================
+
+In the chat box, type:
+
+  "What is this book about?"
+
+Click "Ask →" or press Enter
+
+If you get an answer, you're done! 🎉
+
+If you get "No documents found", that's OK:
+  1. Open Command Prompt (new window)
+  2. Go to: cd C:\Users\Ahad\Desktop\hackathon-Project
+  3. Run: python scripts/ingest_documents.py --sample
+  4. Try asking again
+
+================================================================================
+USEFUL LINKS
+================================================================================
+
+Chat Interface:      http://localhost:3000/chat
+Book Home:          http://localhost:3000
+API Documentation:  http://localhost:8000/docs
+API Health:         http://localhost:8000/health
+
+================================================================================
+IF SOMETHING DOESN'T WORK
+================================================================================
+
+Docker won't start?
+  → Make sure Docker Desktop is open (look for Docker icon in system tray)
+  → Try again: docker-compose up --build
+
+Page doesn't load?
+  → Wait 2-3 minutes (services take time to start)
+  → Check: http://localhost:3000 (does main page work?)
+  → Check Docker Desktop logs
+
+No response from chatbot?
+  → Check: http://localhost:8000/health
+  → If it returns JSON, backend is working
+  → Check browser console (F12) for errors
+
+Error: "Docker command not found"?
+  → Restart your computer (Docker adds itself to PATH on restart)
+  → Or restart Command Prompt
+
+================================================================================
+TO STOP EVERYTHING
+================================================================================
+
+In the same Command Prompt window, press:
+  Ctrl + C
+
+This stops all services.
+
+To restart:
+  docker-compose up
+
+(No --build needed second time, so it's faster)
+
+================================================================================
+LOAD YOUR REAL BOOK CONTENT
+================================================================================
+
+After testing, load your actual book:
+
+1. Open Command Prompt (new window)
+
+2. Go to: cd C:\Users\Ahad\Desktop\hackathon-Project
+
+3. Run: python scripts/ingest_documents.py --path docusaurus-book\docs
+
+4. Go back to chat: http://localhost:3000/chat
+
+5. Ask questions about your book!
+
+================================================================================
+DOCKER CLEANUP (Optional)
+================================================================================
+
+If you want to remove Docker containers:
+
+  docker-compose down
+
+To remove everything including data:
+
+  docker-compose down -v
+
+Then you can start fresh:
+
+  docker-compose up --build
+
+================================================================================
+THAT'S IT!
+================================================================================
+
+Your chatbot is running via Docker!
+
+Next steps:
+  1. Install Docker Desktop
+  2. Run: docker-compose up --build
+  3. Open: http://localhost:3000/chat
+  4. Ask questions!
+
+Questions?
+  • README.md - General info
+  • RAG_SETUP_GUIDE.md - Detailed guide
+  • http://localhost:8000/docs - API docs
+
+================================================================================

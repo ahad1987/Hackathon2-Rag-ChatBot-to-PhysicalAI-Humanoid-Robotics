@@ -1,0 +1,142 @@
+================================================================================
+✅ DO THIS NOW TO RUN YOUR CHATBOT
+================================================================================
+
+3 SIMPLE STEPS:
+
+================================================================================
+STEP 1: Download & Install Docker Desktop (5 minutes)
+================================================================================
+
+1. Go to: https://www.docker.com/products/docker-desktop
+
+2. Click "Download for Windows"
+
+3. Run the installer
+   • Click Next/Install
+   • Accept defaults
+   • Restart computer when asked
+
+4. After restart, Docker Desktop opens
+   • Keep it running
+   • You'll see Docker whale icon in taskbar
+
+✅ DONE! Docker is installed.
+
+================================================================================
+STEP 2: Run One Command (1 minute)
+================================================================================
+
+Open Command Prompt (cmd) and paste:
+
+  cd C:\Users\Ahad\Desktop\hackathon-Project && docker-compose up --build
+
+WHAT YOU'LL SEE:
+  • Lots of downloading/building
+  • Takes 2-3 minutes
+  • Then: "Docusaurus server started on: http://localhost:3000"
+  • Then: "Application startup complete"
+
+✅ DONE! Everything is running.
+
+================================================================================
+STEP 3: Open Your Chatbot (30 seconds)
+================================================================================
+
+Open your browser and go to:
+
+  http://localhost:3000/chat
+
+YOU'LL SEE:
+  ✅ Beautiful chat interface
+  ✅ Purple gradient header
+  ✅ Input box ready to type
+  ✅ "Ask about the Book" title
+
+✅ DONE! Your chatbot is live!
+
+================================================================================
+TEST IT!
+================================================================================
+
+Type in chat box:
+  "Hello"
+
+Click "Ask →"
+
+If you get a response: SUCCESS! 🎉
+
+If you get "No documents found":
+  Don't worry, that's normal.
+  Your documents haven't been ingested yet.
+
+================================================================================
+THAT'S ALL YOU NEED TO DO!
+================================================================================
+
+Total time: ~10 minutes
+
+Your chatbot is now:
+  ✅ Running locally
+  ✅ Integrated into your Docusaurus book
+  ✅ Ready to use
+  ✅ Easy to customize
+
+================================================================================
+NEXT (OPTIONAL): Load Your Book Content
+================================================================================
+
+To make the chatbot answer about your book:
+
+1. Open Command Prompt (NEW WINDOW)
+
+2. Run:
+   cd C:\Users\Ahad\Desktop\hackathon-Project
+   python scripts/ingest_documents.py --path docusaurus-book\docs
+
+3. Go back to: http://localhost:3000/chat
+
+4. Now ask questions about your book!
+
+================================================================================
+STOP EVERYTHING
+================================================================================
+
+In the Command Prompt window with docker-compose, press:
+  Ctrl + C
+
+Services stop.
+
+To restart:
+  docker-compose up
+  (faster second time, no --build needed)
+
+================================================================================
+NEED HELP?
+================================================================================
+
+Read:
+  • DOCKER_QUICK_START.txt - Detailed Docker guide
+  • README.md - Project overview
+  • RAG_SETUP_GUIDE.md - Complete setup guide
+
+Still issues?
+  • Check: http://localhost:8000/health (should return JSON)
+  • Check: Docker Desktop is running
+  • Check: Browser console (F12) for errors
+
+================================================================================
+READY? LET'S GO!
+================================================================================
+
+1. Install Docker Desktop: https://www.docker.com/products/docker-desktop
+
+2. Run this command:
+   docker-compose up --build
+   (from: C:\Users\Ahad\Desktop\hackathon-Project)
+
+3. Open: http://localhost:3000/chat
+
+Your chatbot is waiting! 🚀
+
+================================================================================

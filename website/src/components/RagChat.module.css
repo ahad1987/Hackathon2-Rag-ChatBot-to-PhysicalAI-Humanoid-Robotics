@@ -1,0 +1,381 @@
+/* RAG Chat Component Styles */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 800px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.header {
+  padding: 16px;
+  border-bottom: 1px solid #e0e0e0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.header h2 {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.header p {
+  margin: 0;
+  font-size: 12px;
+  opacity: 0.9;
+}
+
+.selectionIndicator {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.messagesContainer {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #f9f9f9;
+}
+
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  color: #666;
+}
+
+.emptyState p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.hint {
+  color: #999;
+  font-size: 12px;
+}
+
+.message {
+  display: flex;
+  margin-bottom: 8px;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.messageContent {
+  padding: 12px 16px;
+  border-radius: 8px;
+  max-width: 85%;
+  word-wrap: break-word;
+}
+
+.messageContent.user {
+  align-self: flex-end;
+  background: #667eea;
+  color: white;
+  border-bottom-right-radius: 0;
+}
+
+.messageContent.assistant {
+  align-self: flex-start;
+  background: white;
+  color: #333;
+  border: 1px solid #e0e0e0;
+  border-bottom-left-radius: 0;
+}
+
+.messageContent p {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.messageContent p:last-child {
+  margin-bottom: 0;
+}
+
+.badge {
+  display: inline-block;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  margin: 8px 0;
+}
+
+.sources {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+.sources h4 {
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.source {
+  margin-bottom: 10px;
+  padding: 10px;
+  background: #f5f5f5;
+  border-left: 3px solid #667eea;
+  border-radius: 4px;
+}
+
+.source:last-child {
+  margin-bottom: 0;
+}
+
+.sourceHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.sourceTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #333;
+}
+
+.sourceScore {
+  font-size: 11px;
+  color: #666;
+  background: #e0e0e0;
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.sourceText {
+  margin: 0;
+  font-size: 12px;
+  color: #555;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+.metadata {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid #eee;
+  font-size: 11px;
+  color: #999;
+}
+
+.inputForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px;
+  border-top: 1px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.input {
+  padding: 12px;
+  border: 1px solid #d0d0d0;
+  border-radius: 6px;
+  font-size: 14px;
+  font-family: inherit;
+  resize: vertical;
+  min-height: 60px;
+  transition: border-color 0.2s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input:disabled {
+  background: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.sendButton {
+  flex: 1;
+  padding: 10px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sendButton:hover:not(:disabled) {
+  background: #5568d3;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.sendButton:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.sendButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.sendButton.selectionMode {
+  flex: 0.8;
+  background: #4caf50;
+}
+
+.sendButton.selectionMode:hover:not(:disabled) {
+  background: #45a049;
+}
+
+.error {
+  padding: 12px;
+  background: #ffebee;
+  color: #c62828;
+  border-radius: 4px;
+  font-size: 13px;
+  margin: 0 12px 12px 12px;
+  animation: slideIn 0.3s ease-out;
+}
+
+.footer {
+  padding: 8px 12px;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+  background: #f9f9f9;
+  font-size: 11px;
+  color: #999;
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  color: #667eea;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .container {
+    max-height: 600px;
+  }
+
+  .messageContent {
+    max-width: 95%;
+    padding: 10px 12px;
+  }
+
+  .input {
+    min-height: 50px;
+    font-size: 16px;
+  }
+
+  .actions {
+    flex-wrap: wrap;
+  }
+
+  .sendButton {
+    min-width: 100px;
+  }
+}
+
+/* Dark Mode Support */
+
+@media (prefers-color-scheme: dark) {
+  .container {
+    background: #1e1e1e;
+    border-color: #333;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #4c5282 0%, #553399 100%);
+  }
+
+  .messagesContainer {
+    background: #2a2a2a;
+  }
+
+  .messageContent.assistant {
+    background: #333;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+
+  .input {
+    background: #2a2a2a;
+    color: #e0e0e0;
+    border-color: #444;
+  }
+
+  .input:focus {
+    border-color: #667eea;
+  }
+
+  .source {
+    background: #2a2a2a;
+    border-color: #667eea;
+  }
+
+  .sourceTitle,
+  .sourceText {
+    color: #e0e0e0;
+  }
+
+  .inputForm {
+    background: #2a2a2a;
+    border-color: #333;
+  }
+
+  .footer {
+    background: #2a2a2a;
+    border-color: #333;
+    color: #999;
+  }
+}

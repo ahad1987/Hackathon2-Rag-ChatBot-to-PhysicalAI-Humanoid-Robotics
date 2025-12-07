@@ -1,0 +1,42 @@
+Starting document ingestion from C:\Users\Ahad\Desktop\hackathon-Project\docusaurus-book\docs
+Backend API: http://localhost:8000
+
+Found 35 markdown files
+
+[1/35] [OK] applications:use-cases: 1 chunks, 1 vectors
+[2/35] [OK] approach:hands-on-philosophy: 1 chunks, 1 vectors
+[3/35] [OK] approach:how-to-use-this-book: 1 chunks, 1 vectors
+[4/35] [OK] approach:prerequisites: 1 chunks, 1 vectors
+[5/35] [OK] ethics:future-directions: 1 chunks, 1 vectors
+[6/35] [OK] ethics:responsible-ai: 1 chunks, 1 vectors
+[7/35] [OK] foundations:ai-robotics-connection: 1 chunks, 1 vectors
+[8/35] [OK] foundations:hardware-overview: 1 chunks, 1 vectors
+[9/35] [OK] foundations:software-overview: 1 chunks, 1 vectors
+[10/35] [OK] glossary: 1 chunks, 1 vectors
+[11/35] [OK] index: 1 chunks, 1 vectors
+[12/35] [OK] introduction:evolution-of-systems: 1 chunks, 1 vectors
+[13/35] [OK] introduction:what-is-physical-ai: 1 chunks, 1 vectors
+[14/35] [OK] introduction:why-this-matters: 1 chunks, 1 vectors
+[15/35] [OK] module1:chapter-1-middleware: 2 chunks, 2 vectors
+[16/35] [OK] module1:chapter-2-ros2-basics: 2 chunks, 2 vectors
+[17/35] [OK] module1:chapter-3-rclpy-bridge: 2 chunks, 2 vectors
+[18/35] [OK] module1:chapter-4-urdf: 2 chunks, 2 vectors
+[19/35] [OK] module1:index: 1 chunks, 1 vectors
+[20/35] [OK] module2:chapter-1-physics-environment: 1 chunks, 1 vectors
+[21/35] [OK] module2:chapter-2-gazebo-physics: 2 chunks, 2 vectors
+[22/35] [OK] module2:chapter-3-unity-interaction: 1 chunks, 1 vectors
+[23/35] [OK] module2:chapter-4-sensor-simulation: 2 chunks, 2 vectors
+[24/35] [OK] module2:introduction: 2 chunks, 2 vectors
+[25/35] [OK] module3:chapter-1-advanced-perception-training: 10 chunks, 10 vectors
+[26/35] [OK] module3:chapter-2-isaac-sim-synthetic-data: 1 chunks, 1 vectors
+[27/35] [OK] module3:chapter-3-isaac-ros-vslam: 1 chunks, 1 vectors
+[28/35] [OK] module3:chapter-4-nav2-path-planning: 1 chunks, 1 vectors
+[29/35] [OK] module3:introduction: 1 chunks, 1 vectors
+[30/35] [OK] module4:chapter-1-llm-robotics-convergence: 2 chunks, 2 vectors
+[31/35] [OK] module4:chapter-2-voice-to-action-whisper: 2 chunks, 2 vectors
+[32/35] [OK] module4:chapter-3-cognitive-planning-llm: 3 chunks, 3 vectors
+[33/35] [OK] module4:chapter-4-autonomous-humanoid-capstone: 4 chunks, 4 vectors
+[34/35] [OK] module4:introduction: 2 chunks, 2 vectors
+[35/35] [OK] writing-guidelines: 2 chunks, 2 vectors
+
+Ingestion complete: 35/35 documents successfully ingested

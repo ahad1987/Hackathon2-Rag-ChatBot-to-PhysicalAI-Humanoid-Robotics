@@ -1,0 +1,119 @@
+================================================================================
+SIMPLEST WAY TO START YOUR CHATBOT
+================================================================================
+
+Your chatbot is ready! Just use these batch files:
+
+================================================================================
+STEP 1: Start Backend API
+================================================================================
+
+In Windows Explorer, go to:
+  C:\Users\Ahad\Desktop\hackathon-Project\
+
+Double-click:
+  START_BACKEND.bat
+
+This will:
+  • Install Python packages
+  • Start the backend API
+  • Show: "Application startup complete"
+
+Keep this window open!
+
+================================================================================
+STEP 2: Start Your Book + Chatbot
+================================================================================
+
+In Windows Explorer, go to:
+  C:\Users\Ahad\Desktop\hackathon-Project\
+
+Double-click:
+  START_FRONTEND.bat
+
+This will:
+  • Install npm packages
+  • Start your Docusaurus book
+  • Show: "Docusaurus server started on: http://localhost:3000"
+
+Keep this window open!
+
+================================================================================
+STEP 3: Open Your Chatbot
+================================================================================
+
+Open your browser and go to:
+  http://localhost:3000/chat
+
+YOU SHOULD SEE:
+  • Beautiful chat interface
+  • Gradient purple header
+  • Input box
+  • Welcome message
+
+✅ Your chatbot is live!
+
+================================================================================
+TEST YOUR CHATBOT
+================================================================================
+
+1. Type a question:
+   "What is this book about?"
+
+2. Click "Ask →" or press Enter
+
+3. You should get an answer!
+
+(Note: If "No documents found", first load sample data:
+ Run: python scripts/ingest_documents.py --sample
+)
+
+================================================================================
+IF SOMETHING DOESN'T WORK
+================================================================================
+
+Backend won't start?
+  → Close START_BACKEND.bat
+  → Delete: backend\__pycache__ folder
+  → Try again: double-click START_BACKEND.bat
+
+Frontend won't start?
+  → Close START_FRONTEND.bat
+  → Delete: docusaurus-book\node_modules folder
+  → Delete: docusaurus-book\.docusaurus folder
+  → Try again: double-click START_FRONTEND.bat
+
+Chat page doesn't load?
+  → Check: http://localhost:3000/ (does main page work?)
+  → Restart START_FRONTEND.bat
+
+No response from queries?
+  → Check: http://localhost:8000/health (do you get JSON response?)
+  → Check: backend\.env has API keys
+  → Check browser console (F12) for errors
+
+================================================================================
+LOAD YOUR BOOK CONTENT
+================================================================================
+
+Once everything works, load your actual book:
+
+1. Open Command Prompt (cmd)
+2. Go to: C:\Users\Ahad\Desktop\hackathon-Project
+3. Run:
+   python scripts/ingest_documents.py --path docusaurus-book\docs
+
+Then your chatbot can answer questions about your book!
+
+================================================================================
+THAT'S IT!
+================================================================================
+
+Just double-click the two .bat files and you're done!
+
+Questions?
+  • README.md - Project overview
+  • RAG_SETUP_GUIDE.md - Complete setup
+  • http://localhost:8000/docs - API documentation
+
+================================================================================
