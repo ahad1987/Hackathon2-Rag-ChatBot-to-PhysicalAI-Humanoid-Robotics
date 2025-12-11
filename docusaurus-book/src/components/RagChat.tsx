@@ -283,7 +283,7 @@ export const RagChat: React.FC<RagChatProps> = ({
 
       <div className={styles.footer}>
         <p>
-          Powered by RAG • Responses based on book content •{" "}
+          Powered by Ahad • Responses based on book content •{" "}
           <a href="/docs" target="_blank" rel="noopener noreferrer">
             View Book
           </a>
